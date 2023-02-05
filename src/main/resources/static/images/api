@@ -1,0 +1,61 @@
+| Method | URL | Request | Response |
+| --- | --- | --- | --- |
+| GET | /api/memos | - | {
+{
+"createdAt": "2023-02-05T20:31:45.776395",
+"modifiedAt": "2023-02-05T20:31:45.776395",
+"id": 5,
+"username": "QmxkMbBYBa",
+"contents": "555555555555",
+"titlename": null,
+"password": null
+…
+} |
+| GET | /api/memos/{id} | - | {
+"createdAt": "2023-02-05T20:31:45.776395",
+"modifiedAt": "2023-02-05T20:31:45.776395",
+"id": 5,
+"username": "QmxkMbBYBa",
+"contents": "555555555555",
+"titlename": null,
+"password": null
+} |
+| POST | /api/memos | {
+"title" : "title",
+"content" : "content",
+"author" : "author",
+"password" : "password"
+}
+{"username" : "hyun",
+"contents" : "dkdkdkdkdkdkdkdkr",
+"titlename" : "asd",
+"password" : "1234"} | {
+"createdAt": "2023-02-05T20:31:45.776395",
+"modifiedAt": "2023-02-05T20:31:45.776395",
+"id": 5,
+"username": "QmxkMbBYBa",
+"contents": "555555555555",
+"titlename": titlename,
+"password": password
+} |
+| PUT | /api/memos/{id} | {
+"author" : "author",
+"password" : "password"
+}
+{"username" : "hyun",
+"contents" : "dkdkdkdkdkdkdkdkr
+"password" :"password2"
+} | {
+"createdAt": "2023-02-05T20:31:45.776395",
+"modifiedAt": "2023-02-05T20:31:45.776395",
+"id": 5,
+"username": "QmxkMbBYBa",
+"contents": "555555555555",
+"titlename": "titlename2",
+"password": password2"
+} |
+| DELETE | /api/memos/{id} | {
+"password" :"password"
+} | {
+"success": true,
+} |
