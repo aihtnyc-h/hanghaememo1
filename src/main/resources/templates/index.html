@@ -149,7 +149,7 @@
       }
 
       // 3. 전달할 data JSON으로 만듭니다.
-      let data = {'username': username, 'contents': contents};
+      let data = {'username': username, 'contents': contents, 'titlename' : titlename, 'password' : password };
 
       // 4. PUT /api/memos/{id} 에 data를 전달합니다.
       $.ajax({

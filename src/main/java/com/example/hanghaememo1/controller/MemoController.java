@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/")
 public class MemoController {
 
     private final MemoService memoService;
