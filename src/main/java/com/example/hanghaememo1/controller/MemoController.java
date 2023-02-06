@@ -16,28 +16,28 @@ public class MemoController {
     private final MemoService memoService;
 
     @GetMapping("/api/posts")
-    public List<Memo> getPosts() {
-        return memoService.getMemos();
+    public List<Memo> getMemo() {
+        return memoService.getMemo();
     }
 
     @PostMapping("/api/post")
-    public Memo createPost(@RequestBody MemoRequestDto requestDto) {
+    public Memo createMemo(@RequestBody MemoRequestDto requestDto) {
         return memoService.createMemo(requestDto);
     }
 
     @GetMapping("/api/post/{id}")
-    public List<Memo> getPost(@PathVariable Long id) {
-        return memoService.getMemos();
+    public List<Memo> getMemo(@PathVariable Long id) {
+        return memoService.getMemo();
     }
 
     @PutMapping("/api/post/{id}")
-    public Long updatePost(@PathVariable Long id, @RequestBody MemoRequestDto requestDto) {
-        return memoService.update(id, requestDto);
+    public Long updateMemos(@PathVariable Long id, @RequestBody MemoRequestDto requestDto) {
+        return memoService.updateMemo(id, requestDto);
     }
 
     @DeleteMapping("/api/post/{id}")
-    public Long deletePost(@PathVariable Long id) {
-        return memoService.deleteMemo(id);
+    public Long deleteMemo(@PathVariable Long id, @RequestBody MemoRequestDto requestDto) {
+        return memoService.deleteMemo(id, requestDto.getPassword());
     }
 }
 
