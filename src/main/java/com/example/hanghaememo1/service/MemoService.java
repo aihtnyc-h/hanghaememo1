@@ -33,13 +33,30 @@ public class MemoService {
                 () -> new IllegalArgumentException("아이디가 존재하지 않습니다.")
         );
         memo.update(requestDto);
-        return memo.getId();
+
+        //return memo.getId();
+
+        memo = memoRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("비밀번호가 일치하지 않습니다.")
+        );
+        if (!memo.getPassword().equals(id)) {
+            throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
+
+        }
+        return Long.valueOf(memo.getPassword());
     }
 
     @Transactional
-    public Long deleteMemo(Long id) {
-        memoRepository.deleteById(id);
-        return id;
-    }
+    public Long deleteMemo(Long password) {
+        Memo memo = memoRepository.findById(password).orElseThrow(
+                () -> new IllegalArgumentException("비밀번호가 일치하지 않습니다.")
+        );
+        if (!memo.getPassword().equals(password)) {
+            throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
 
+        }
+
+        return password;
+    }
 }
+

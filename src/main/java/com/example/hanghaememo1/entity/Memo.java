@@ -20,9 +20,10 @@ public class Memo extends Timestamped {
 
     @Column(nullable = false)
     private String contents;
-    //@Column(nullable = false)
+    @Column(nullable = false)
     private String titlename;
-    //@Column(nullable = false)
+    @Column(nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String password;
 
     public Memo(String username, String contents, String titlename, String password) {
